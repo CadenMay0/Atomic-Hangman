@@ -54,9 +54,9 @@ transform: translate(-50%, -50%);
   color:green;
 }
 #title{
-	position: relative;
+	position: fixed;
 	float:left;
-	top:0%;
+	top:5%;
 	left:50%;
 	transform: translate(-50%,-50%);
 	color:green;
