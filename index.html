@@ -4,12 +4,24 @@
 	<meta charset="UTF-8">
 	<title>Atomic Hangman</title>
 	<script src="assets/javascript/hangman.js"></script>
+	
 	<!-- Latest compiled and minified CSS & JS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
 </head>
  <body>
-	<button type="button" class="btn btn-primary" onclick="reset();">Start</button>
+ <div class="container-fluid" style="background-image: url('assets/images/Vectromat Freebie 1 - Fallout.jpg'); height: 100vh; background-size:cover; position: relative;">
+ 	<h1 id="wordField">""</h1>
+ 	<p id="paragrooph">Press 'S' Button to start.</p>
+ 	<p id="system"></p>
+ 	<p id="counter"></p>
+ 	<h1 id="title">WELCOME TO ATOMIC HANGMAN!</h1>
+
+
+ 	<button type="button" class="btn btn-default btn-circle" style=" position:fixed; top: 16.5%; left:9.5%; background-color: gray;"onclick="reset();">S</button>
+ </div>
 </body>
 </html>

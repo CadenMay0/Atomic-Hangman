@@ -1,0 +1,67 @@
+#wordField{
+position: relative;
+float: left;
+top: 92%;
+left: 50%;
+transform: translate(-50%, -50%);
+ color: green;
+ background-color: black;
+ font-size: 6vmin;
+}
+.btn-circle {
+  width: 49px;
+  height: 49px;
+  text-align: center;
+  padding: 5px 0;
+  font-size: 20px;
+  line-height: 1.33;
+  border-radius: 50vh;
+  border-color: black;
+}
+#paragrooph{
+	position: fixed;
+	left:2.5%;
+	top:10%;
+	background-color: black;
+	color: green;
+	font-size: 3vmin;
+}
+#system{
+	position: relative;
+	float:left;
+	top:50%;
+	left:50%;
+	transform: translate(-50%,-50%);
+	color:green;
+	background: black;
+	font-size: 6vmin;
+	text-align: center;
+	width:100%;
+}
+#counter {
+  width: 49px;
+  height: 49px;
+  text-align: center;
+  padding: 5px 0;
+  font-size: 20px;
+  line-height: 1.33;
+  border-radius: 50vh;
+  background-color: black;
+  border-color: black;
+  top:16.5%;
+  left:87%;
+  position: fixed;
+  color:green;
+}
+#title{
+	position: relative;
+	float:left;
+	top:0%;
+	left:50%;
+	transform: translate(-50%,-50%);
+	color:green;
+	background: black;
+	font-size: 6vmin;
+	text-align: center;
+	width:100%;
+}

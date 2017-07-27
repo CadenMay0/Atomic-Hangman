@@ -23,19 +23,24 @@ function underLine(){
 	}
 	hangmanWord = blanks.toString();
 	hangmanWord = hangmanWord.replace(/,/g,"");
-
+	return hangmanWord;
 	//console.log(hangmanWord);
 };
+//function write(){
+	
+//};
 function reset(){
 	fill = "";
 	hangmanWord = "";
 	grabWord();
 	underLine();
-	wrongAnswers = 0;
+	document.getElementById("wordField").innerHTML = underLine();
+	wrongAnswers = 6;
 	end = 0;
+	document.getElementById("system").innerHTML=("");
+	document.getElementById("counter").innerHTML=(6);
 
 };
-
 
 document.onkeyup = function check(event)
 {
@@ -43,13 +48,15 @@ document.onkeyup = function check(event)
 		return;
 	}
 	guess = event.key;
-	console.log(guess);
+	guess = guess.toLowerCase();
+	//console.log(guess);
 	guess = guess.toString();
 	if (chosenWord.indexOf(guess) == -1) {
-		wrongAnswers++;
-		console.log("Incorrect answer. " + wrongAnswers + " digits of the launch code are entered. Nuclear Detonation soon.");
-		if (wrongAnswers==6) {
-			console.log("Game Over. Nuclear holocaust achieved.")
+		wrongAnswers--;
+		document.getElementById("counter").innerHTML=(wrongAnswers);
+		document.getElementById("system").innerHTML=("!Incorrect answer. " + wrongAnswers + " attempts remaining. Nuclear Detonation soon.!");
+		if (wrongAnswers==0) {
+			document.getElementById("system").innerHTML=("!Game Over. Nuclear holocaust achieved.!")
 			end = 1;
 			return;
 
@@ -68,10 +75,11 @@ document.onkeyup = function check(event)
 		}
 		hangmanWord = blanks.toString();
 		hangmanWord = hangmanWord.replace(/,/g,"");
+		document.getElementById("wordField").innerHTML = hangmanWord;
 		if (hangmanWord == chosenWord) {
 			end = 1;
-			console.log(chosenWord);
-			console.log("Nuclear detonation averted.");
+			//console.log(chosenWord);
+			document.getElementById("system").innerHTML=("!Nuclear detonation averted.!");
 			return;
 		}
 	}
