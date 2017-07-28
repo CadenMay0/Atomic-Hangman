@@ -39,7 +39,7 @@ function reset(){
 	wrongAnswers = 6;
 	end = 0;
 	document.getElementById("system").innerHTML=("");
-	document.getElementById("counter").innerHTML=(6);
+	//document.getElementById("counter").innerHTML=(6);
 
 };
 
@@ -57,9 +57,9 @@ document.onkeyup = function check(event)
 		document.getElementById("system").innerHTML=("!Incorrect answer. " + wrongAnswers + " attempts remaining. Nuclear Detonation soon.!");
 		if (wrongAnswers==0) {
 			document.getElementById("system").innerHTML=("!Game Over. Nuclear holocaust achieved.!");
-			setTimeout(function(){document.getElementById("system").innerHTML=("Your final score is "+score+". Press 'S' to play again");}, 2000);
+			setTimeout(function(){document.getElementById("system").innerHTML=("Your final score is " + score + ". Press 'S' to play again");}, 2000);
 			end = 1;
-			score = 0;
+			setTimeout(function(){score = 0; document.getElementById("counter").innerHTML=(score);}, 3000);			
 			return;
 
 		}
