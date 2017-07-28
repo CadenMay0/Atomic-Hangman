@@ -10,6 +10,7 @@ var aryIndex;
 var fill;
 var wrongAnswers;
 var end;
+var score = 0;
 
 function grabWord(){
 	aryIndex = Math.floor((Math.random()*hangWords.length));
@@ -53,11 +54,12 @@ document.onkeyup = function check(event)
 	guess = guess.toString();
 	if (chosenWord.indexOf(guess) == -1) {
 		wrongAnswers--;
-		document.getElementById("counter").innerHTML=(wrongAnswers);
 		document.getElementById("system").innerHTML=("!Incorrect answer. " + wrongAnswers + " attempts remaining. Nuclear Detonation soon.!");
 		if (wrongAnswers==0) {
-			document.getElementById("system").innerHTML=("!Game Over. Nuclear holocaust achieved.!")
+			document.getElementById("system").innerHTML=("!Game Over. Nuclear holocaust achieved.!");
+			setTimeout(function(){document.getElementById("system").innerHTML=("Your final score is "+score+". Press 'S' to play again");}, 2000);
 			end = 1;
+			score = 0;
 			return;
 
 		}
@@ -77,9 +79,12 @@ document.onkeyup = function check(event)
 		hangmanWord = hangmanWord.replace(/,/g,"");
 		document.getElementById("wordField").innerHTML = hangmanWord;
 		if (hangmanWord == chosenWord) {
-			end = 1;
+			//end = 1;
 			//console.log(chosenWord);
 			document.getElementById("system").innerHTML=("!Nuclear detonation averted.!");
+			reset();
+			score++;
+			document.getElementById("counter").innerHTML=(score);
 			return;
 		}
 	}
